@@ -1,0 +1,25 @@
+// Level: Haunted Halls
+
+
+var loadouts = import git/loadouts
+
+func equip_staff()
+  equip staff *9 vigor +9
+
+func equip_crossbow()
+  equipL crossbow *10 +10
+  equipR crossbow *10 +11
+
+?loc = undead_crypt
+  equip_staff()
+  ?hp < 10
+    activate potion
+  loadouts.healwalk()
+
+?loc = undead_crypt_boss
+  equip_crossbow()
+  ?foe = Booo | foe = Skeletimmy
+    equip_staff()
+  ?hp < 10
+    activate potion
+  loadouts.healwalk()

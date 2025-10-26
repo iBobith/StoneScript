@@ -1,0 +1,22 @@
+// Level: Caves of fear
+
+var loadouts = import git/loadouts
+
+func equip_crossbow()
+  equipL crossbow *10 +10
+  equipR crossbow *10 +11
+
+func equip_dps()
+  equip repeating crossbow *9 +7
+
+?loc = caves
+  ?foe ! boss 
+    ?hp = maxhp | foe.distance <= 23
+      equip_dps()
+  :?foe = boss  // Bolesh
+    ?foe.distance > 10
+      equip_crossbow()
+  :?hp < 10
+    activate potion
+
+  loadouts.healwalk()

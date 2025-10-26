@@ -1,0 +1,10 @@
+// Max line length is 48 characters---------end
+// Other imports...
+import git/locations/00_rocky_plateau
+import git/locations/01_deadwood_canyon
+import git/locations/02_caves_of_fear
+import git/locations/03_mushroom_forest
+import git/locations/04_haunted_halls
+import git/locations/05_boiling_mine
+import git/locations/06_icy_ridge
+import git/locations/07_temple

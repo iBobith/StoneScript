@@ -1,0 +1,12 @@
+// Default of any switch case
+func healwalk()
+  ?pickup.distance < 10
+    equipL star
+    equipR stone shield *10
+  :?foe.distance > 22
+    ?hp < maxhp
+      equipL ouroboros
+      equipR shield *10
+    :
+      equipL triskelion
+      equipR shield *10

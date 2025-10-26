@@ -1,0 +1,19 @@
+// Level: Boiling Mine
+
+var loadouts = import git/loadouts
+
+func equip_crossbow()
+  equipL crossbow *10 +10
+  equipR crossbow *10 +11
+
+?loc = mine
+  equip_crossbow()
+  ?hp < 10
+    activate potion
+  loadouts.healwalk()
+
+?loc = bronze_guardian
+  equip_crossbow()
+  ?hp < 10
+    activate potion
+  loadouts.healwalk()
