@@ -2,21 +2,17 @@
 
 var loadouts = import git/loadouts
 
-func equip_crossbow()
-  equipL crossbow *10 +10
-  equipR crossbow *10 +11
-
 func equip_dps()
-  equip repeating crossbow *9 +7
+  equip repeating crossbow *10 +7
 
 ?loc = caves
-  ?foe ! boss 
+  ?hp < 10
+    activate potion
+  :?foe ! boss 
     ?hp = maxhp | foe.distance <= 23
       equip_dps()
   :?foe = boss  // Bolesh
     ?foe.distance > 10
-      equip_crossbow()
-  :?hp < 10
-    activate potion
+      equip_dps()
 
   loadouts.healwalk()
